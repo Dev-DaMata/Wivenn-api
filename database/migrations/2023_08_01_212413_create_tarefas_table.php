@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('tarefas', function (Blueprint $table) {
             $table->id();
-            $table->integer('title');
+            $table->string('title');
             $table->string('description');
             $table->unsignedBigInteger('assignee_id'); //para acidionar fk
             $table->dateTime('due_date');

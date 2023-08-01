@@ -20,7 +20,16 @@ class TarefaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return Tarefa::create($request->all());
+        if(Tarefa::create($request->all())){
+            return response()->json([
+                'message' => 'Tarefa cadastrado com sucesso.'
+            ], 201);
+        }else{
+            return response()->json([
+                'message' => 'erro ao cadastrar a tarefa'
+            ], 404);
+        }
     }
 
     /**
