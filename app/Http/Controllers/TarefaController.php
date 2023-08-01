@@ -50,7 +50,7 @@ class TarefaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $Tarefa)
+    public function update(Request $request, $Tarefa)
     {
         $Tarefa = Tarefa::find($Tarefa);
         if ($Tarefa) {
@@ -66,8 +66,14 @@ class TarefaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(string $Tarefa)
     {
-        //
+        if(Tarefa::destroy($Tarefa)){
+            return ;
+        }else{
+            return response()->json([
+                'message' => 'erro ao excluir a tarefa.'
+            ], 404);
+        }
     }
 }
