@@ -66,8 +66,14 @@ class DepartamentoController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(string $departamento)
     {
-        //
+        if(departamento::destroy($departamento)){
+            return $departamento;
+        }else{
+            return response()->json([
+                'message' => 'erro ao excluir o departamento.'
+            ], 404);
+        }
     }
 }
