@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DepartamentoController;
+use App\Http\Controllers\FuncionarioController;
 use App\Models\Departamento;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -18,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::apiResources([
     'departamento' => DepartamentoController::class,
+    'funcionario' => FuncionarioController::class,
 ]);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
