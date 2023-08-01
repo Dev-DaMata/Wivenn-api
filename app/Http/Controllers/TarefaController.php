@@ -50,9 +50,17 @@ class TarefaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, string $Tarefa)
     {
-        //
+        $Tarefa = Tarefa::find($Tarefa);
+        if ($Tarefa) {
+            $Tarefa->update($request->all());//o all nesse casso é para fazer todos os campos
+            return $Tarefa;
+        }else{
+            return response()->json([
+                'message' => 'erro ao atualizar a tarefa.'
+            ], 404);
+        }
     }
 
     /**
