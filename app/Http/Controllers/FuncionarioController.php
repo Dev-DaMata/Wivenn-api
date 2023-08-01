@@ -35,9 +35,16 @@ class FuncionarioController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $Funcionario)
     {
-        //
+        $Funcionario = Funcionario::find($Funcionario);//o find pesquisa pelo id da chave primaria
+        if($Funcionario){
+            return $Funcionario ;
+        }else{
+            return response()->json([
+                'message' => 'Erro ao pesquisar o funcionario.'
+            ], 404);
+        }
     }
 
     /**
