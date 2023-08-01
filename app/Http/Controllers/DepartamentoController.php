@@ -37,7 +37,14 @@ class DepartamentoController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $departamento = departamento::find($id);//o find pesquisa pelo id da chave primaria
+        if($departamento){
+            return $departamento ;
+        }else{
+            return response()->json([
+                'message' => 'Erro ao pesquisar o departamento.'
+            ], 404);
+        }
     }
 
     /**
