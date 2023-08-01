@@ -66,8 +66,14 @@ class FuncionarioController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(string $Funcionario)
     {
-        //
+        if(Funcionario::destroy($Funcionario)){
+            return ;
+        }else{
+            return response()->json([
+                'message' => 'erro ao excluir o funcionario.'
+            ], 404);
+        }
     }
 }
