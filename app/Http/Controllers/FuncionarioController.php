@@ -50,9 +50,17 @@ class FuncionarioController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $Funcionario)
     {
-        //
+        $Funcionario = Funcionario::find($Funcionario);
+        if ($Funcionario) {
+            $Funcionario->update($request->all());//o all nesse casso é para fazer todos os campos
+            return $Funcionario;
+        }else{
+            return response()->json([
+                'message' => 'Erro ao atualizar o funcionario.'
+            ], 404);
+        }
     }
 
     /**
