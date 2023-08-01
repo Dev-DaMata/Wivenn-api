@@ -9,6 +9,6 @@ class Departamento extends Model
 {
     use HasFactory;
 
-    protected $table = ['Name'];
+    protected $fillable = ['Name'];
 
 }
