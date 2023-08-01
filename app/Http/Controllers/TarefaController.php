@@ -35,9 +35,16 @@ class TarefaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $Tarefa)
     {
-        //
+        $Tarefa = Tarefa::find($Tarefa);//o find pesquisa pelo id da chave primaria
+        if($Tarefa){
+            return $Tarefa ;
+        }else{
+            return response()->json([
+                'message' => 'erro ao pesquisar a tarefa.'
+            ], 404);
+        }
     }
 
     /**
