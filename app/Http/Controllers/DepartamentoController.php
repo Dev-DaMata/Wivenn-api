@@ -20,7 +20,16 @@ class DepartamentoController extends Controller
      */
     public function store(Request $request)
     {
-
+        return departamento::create($request->all());
+        if(departamento::create($request->all())){
+            return response()->json([
+                'message' => 'Departamento cadastrado com sucesso.'
+            ], 201);
+        }else{
+            return response()->json([
+                'message' => 'erro ao cadastrar o departemento.'
+            ], 404);
+        }
     }
 
     /**
