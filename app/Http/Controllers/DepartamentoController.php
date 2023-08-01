@@ -35,9 +35,9 @@ class DepartamentoController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($departamento)
     {
-        $departamento = departamento::find($id);//o find pesquisa pelo id da chave primaria
+        $departamento = departamento::find($departamento);//o find pesquisa pelo id da chave primaria
         if($departamento){
             return $departamento ;
         }else{
@@ -50,9 +50,17 @@ class DepartamentoController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $departamento)
     {
-        //
+        $departamento = departamento::find($departamento);
+        if ($departamento) {
+            $departamento->update($request->all());//o all nesse casso é para fazer todos os campos
+            return $departamento;
+        }else{
+            return response()->json([
+                'message' => 'erro ao atualizar o departamento.'
+            ], 404);
+        }
     }
 
     /**
