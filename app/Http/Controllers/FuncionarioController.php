@@ -98,7 +98,9 @@ class FuncionarioController extends Controller
     public function destroy(string $Funcionario)
     {
         if(Funcionario::destroy($Funcionario)){
-            return ;
+            return response()->json([
+                'message' => 'Funcionario deletado com sucesso.'
+            ], 201);
         }else{
             return response()->json([
                 'message' => 'erro ao excluir o funcionario.'
