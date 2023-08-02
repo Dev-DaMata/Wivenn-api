@@ -24,6 +24,23 @@ Route::apiResources([
     'tarefa' => TarefaController::class,
 ]);
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+
+Route::post('/login', function(Request $request){
+    $credantials = $request->only(['email', 'password']);//pegar as credencias
+
+    if(!$token = auth()->attempt($credantials)){
+        abort(401,'Unauthorized');
+    }
+
+    return response()->json([
+        'data' => [
+            'token' => $token,
+            'token_type' => 'bearer',
+            'expires_in' => auth()->factory()->getTTL() * 60 //tempo para ele expirar
+        ]
+    ]);
 });

@@ -14,7 +14,7 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'web',
+        'guard' => 'api',//mudar de web para api para transformar em uma api por completo
         'passwords' => 'users',
     ],
 
@@ -40,6 +40,10 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'api' =>[ //definir a autenticação
+            'driver' => 'jwt',
+            'provider' => 'users'
+        ]
     ],
 
     /*
