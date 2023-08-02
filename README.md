@@ -227,3 +227,35 @@ Esquema da resposta
 ]
 ````
 
+---
+- **GET /funcionario/:id**
+
+Busca um funcionario no banco de dados a partir do id
+
+Esquema da requisição:
+
+    >http://127.0.0.1:8000/api/funcionario/5
+
+Esquema da resposta:
+
+```json
+{
+	"id": 5,
+	"firstName": "Guilherme",
+	"lastName": "da Mata",
+	"email": "gui@gmail.com",
+	"phone": "+55 (11) 98765-4321",
+	"department_id": "1",
+	"created_at": "2023-02-08T18:40:42.620000Z",
+	"updated_at": "2023-02-08T18:40:42.620000Z"
+}
+```
+
+Esquema da resposta caso você esteja procurando um ID que não existe:
+
+```json
+{
+	"message": "Erro ao pesquisar o funcionario."
+}
+```
+
