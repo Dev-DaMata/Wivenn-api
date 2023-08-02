@@ -67,11 +67,12 @@ url/ http://127.0.0.1:8000/api/
 ## Departamento 🏬
 
 - <spam style="color: lightgreen">__GET  /departamento__</spam>
+
 Confira os Departamentos registrados no banco de dados
 Esquema da requisição
-    ```
-    http://127.0.0.1:8000/api/departamento
-    ```
+   
+    >http://127.0.0.1:8000/api/departamento
+ 
 Esquema da resposta
 ````
 [
@@ -89,6 +90,42 @@ Esquema da resposta
 	}
 ]
 ````
+
+---
+- **GET /departamento/:id**
+
+Busca um departamento no banco de dados a partir do id
+
+Esquema da requisição:
+
+    >http://127.0.0.1:8000/api/departamento/2
+
+Esquema da resposta:
+
+```json
+{
+	"id": 2,
+	"Name": "RH",
+	"created_at": "2023-02-08T20:12:34.250000Z",
+	"updated_at": "2023-02-08T20:12:34.250000Z"
+}
+```
+
+Esquema da resposta caso você esteja procurando um ID que não existe:
+
+```json
+{
+	"message": "Erro ao pesquisar o departamento."
+}
+```
+
+
+
+
+
+
+
+
 
 
 
