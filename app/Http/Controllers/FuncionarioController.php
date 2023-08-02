@@ -65,14 +65,32 @@ class FuncionarioController extends Controller
     {
         $Funcionario = Funcionario::find($Funcionario);
         if ($Funcionario) {
-            $Funcionario->update($request->all());//o all nesse casso é para fazer todos os campos
+            // Validar o email
+            $email = $request->input('email');
+            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                return response()->json([
+                    'message' => 'O email fornecido é inválido.'
+                ], 400);
+            }
+
+            // Validar o número de telefone (assumindo formato de 9 dígitos)
+            $phone = $request->input('phone');
+            if (!preg_match('/^\d{9}$/', $phone)) {
+                return response()->json([
+                    'message' => 'O número de telefone fornecido é inválido. Deve conter 9 dígitos.'
+                ], 400);
+            }
+
+            // Se tudo estiver correto, atualize os dados do funcionário
+            $Funcionario->update($request->all());
             return $Funcionario;
-        }else{
+        } else {
             return response()->json([
                 'message' => 'Erro ao atualizar o funcionario.'
             ], 404);
         }
     }
+
 
     /**
      * Remove the specified resource from storage.
