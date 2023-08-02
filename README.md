@@ -119,11 +119,34 @@ Esquema da resposta caso você esteja procurando um ID que não existe:
 }
 ```
 
+---
+- **POST**
 
+Insira um departamento no banco
 
+Esquema da requisição:
 
+    >http://127.0.0.1:8000/api/departamento
 
+No json:
+```json
+{
+	"nome": "Cozinha",
+}
+```
 
+Esquema da resposta:
+
+```json
+{
+	"Name": "Cozinha",
+	"updated_at": "2023-08-02T20:39:01.407000Z",
+	"created_at": "2023-08-02T20:39:01.407000Z",
+	"id": 3
+}
+```
+
+---
 
 
 
