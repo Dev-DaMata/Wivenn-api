@@ -148,7 +148,31 @@ Esquema da resposta:
 
 ---
 
+- **PUT /departamento/id**
 
+Verbo responsavel pela atualização do departamento
+
+Esquema da requisição:
+
+>http://127.0.0.1:8000/api/departamento/5
+
+No json:
+
+```json
+{
+	"nome": "Diretoria",
+}
+```
+Esquema da resposta:
+
+```json
+{
+	"id": 5,
+	"Name": "Diretoria",
+	"created_at": "2023-02-08T20:40:13.687000Z",
+	"updated_at": "2023-08-02T20:44:05.574000Z"
+}
+```
 
 
 
