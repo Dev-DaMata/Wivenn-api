@@ -508,5 +508,23 @@ Esquema da resposta:
 	"updated_at": "2023-08-02T21:33:50.233000Z"
 }
 ```
+
 ---
 
+- **DELETE /tarefa/id**
+
+Verbo responsavel por excluir a tarefa do banco de dados
+
+Esquema da requisição:
+
+>http://127.0.0.1:8000/api/tarefa/4
+
+Esquema da resposta:
+
+```json
+{
+	"message": "Tarefa deletado com sucesso."
+}
+
+```
+---
