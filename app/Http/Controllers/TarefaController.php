@@ -69,7 +69,9 @@ class TarefaController extends Controller
     public function destroy(string $Tarefa)
     {
         if(Tarefa::destroy($Tarefa)){
-            return ;
+            return response()->json([
+                'message' => 'Tarefa deletado com sucesso.'
+            ], 201);
         }else{
             return response()->json([
                 'message' => 'erro ao excluir a tarefa.'
