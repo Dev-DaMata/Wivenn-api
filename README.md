@@ -476,3 +476,37 @@ Esquema da resposta:
 
 ---
 
+- **PUT /tarefa/id**
+
+Verbo responsavel pela atualização da tarefa
+
+Esquema da requisição:
+
+>http://127.0.0.1:8000/api/tarefa/4
+
+No json:
+
+```json
+{
+	
+	"title": "troca teclado",
+	"description": "trocar o teclado",
+	"assignee_id": "2",
+    "due_date": "23:50"
+}
+```
+Esquema da resposta:
+
+```json
+{
+	"id": 4,
+	"title": "trocar teclado",
+	"description": "trocar o tecaldo",
+	"assignee_id": "2",
+	"due_date": "23:50",
+	"created_at": "2023-02-08T21:23:51.890000Z",
+	"updated_at": "2023-08-02T21:33:50.233000Z"
+}
+```
+---
+
