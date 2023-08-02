@@ -1,66 +1,194 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Wivenn-api
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Projeto desenvolvido em [PHP](https://www.php.net/) com framework [Laravel](https://laravel.com/)
 
-## About Laravel
+## 📘 Pré-requisitos
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- <a href="https://www.php.net/">PHP</a> - v. 8.2.4
+- <a href="https://getcomposer.org/">Composer</a> - v. 2.5.8
+- <a href="https://laravel.com/">Laravel</a> - v. 10.17.0
+- <a href="https://www.apachefriends.org/pt_br/index.html">Xampp</a> - v. 3.3.0
+- <a href="https://github.com/tymondesigns/jwt-auth">jwt-auth</a> - v. 2.x
+- <a href="https://git-scm.com/downloads">Git</a>
+- <a href="https://code.visualstudio.com/download">VsCode</a> ou qualquer editor de texto de preferência.
+- <a href="https://insomnia.rest/download">Insomnia Rest</a> ou qualquer outra ferramenta de cliente API Rest.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## :rocket: Como instalar a aplicação localmente
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+1. Para clonar repositório:
 
-## Learning Laravel
+    ```
+    git clone https://github.com/Dev-DaMata/Wivenn-api.git
+    ```
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+2. Entrando na pasta:
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+     ```
+     cd ./wivenn-api
+     ```
+3. Para instalar as dependências necessárias/todas as dependências :
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+    ```Composer
+    //instalar todas as dependências:
+    Composer i
+    ```
+4. Para iniciar o projeto:
 
-## Laravel Sponsors
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
-### Premium Partners
+    ```
+    php artisan serve
+    ```
+⚠️ Para que o php rode na sua maquina é necessario um servidor local, neste caso estou utilizando o Xampp
+    
+##  :floppy_disk:Banco
+O banco de dados que está sendo utilizado neste projeto está sendo criado na pasta /database/migrations/ com os arquivos correspondentes.
+- 2023_08_01_212306_create_departamentos_table.php
+- 2023_08_01_212345_create_funcionarios_table.php
+- 2023_08_01_212413_create_tarefas_table.php
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+# Para executar o script que criara o banco 
 
-## Contributing
+        php artisan migrate
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+# :high_brightness: Tabela de Entidades
+<!--ts-->
+   * [Departamento](#departamento)
+   * [Funcionários](#funcionários)
+   * [Tarefas](#pedidos)
+<!--te-->
 
-## Code of Conduct
+## :bus: Rotas
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```
+url/ http://127.0.0.1:8000/api/
+```
+    
+## Departamento 🏬
 
-## Security Vulnerabilities
+- <spam style="color: lightgreen">__GET  /departamento__</spam>
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Confira os Departamentos registrados no banco de dados
+Esquema da requisição
+   
+    >http://127.0.0.1:8000/api/departamento
+ 
+Esquema da resposta
+````
+[
+	{
+		"id": 1,
+		"Name": "T.I",
+		"created_at": "2023-01-08T23:19:08.897000Z",
+		"updated_at": "2023-01-08T23:19:08.897000Z"
+	},
+	{
+		"id": 2,
+		"Name": "RH",
+		"created_at": "2023-02-08T20:12:34.250000Z",
+		"updated_at": "2023-02-08T20:12:34.250000Z"
+	}
+]
+````
 
-## License
+---
+- **GET /departamento/:id**
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Busca um departamento no banco de dados a partir do id
+
+Esquema da requisição:
+
+    >http://127.0.0.1:8000/api/departamento/2
+
+Esquema da resposta:
+
+```json
+{
+	"id": 2,
+	"Name": "RH",
+	"created_at": "2023-02-08T20:12:34.250000Z",
+	"updated_at": "2023-02-08T20:12:34.250000Z"
+}
+```
+
+Esquema da resposta caso você esteja procurando um ID que não existe:
+
+```json
+{
+	"message": "Erro ao pesquisar o departamento."
+}
+```
+
+---
+- **POST**
+
+Insira um departamento no banco
+
+Esquema da requisição:
+
+    >http://127.0.0.1:8000/api/departamento
+
+No json:
+```json
+{
+	"nome": "Cozinha",
+}
+```
+
+Esquema da resposta:
+
+```json
+{
+	"Name": "Cozinha",
+	"updated_at": "2023-08-02T20:39:01.407000Z",
+	"created_at": "2023-08-02T20:39:01.407000Z",
+	"id": 3
+}
+```
+
+---
+
+- **PUT /departamento/id**
+
+Verbo responsavel pela atualização do departamento
+
+Esquema da requisição:
+
+>http://127.0.0.1:8000/api/departamento/5
+
+No json:
+
+```json
+{
+	"nome": "Diretoria",
+}
+```
+Esquema da resposta:
+
+```json
+{
+	"id": 5,
+	"Name": "Diretoria",
+	"created_at": "2023-02-08T20:40:13.687000Z",
+	"updated_at": "2023-08-02T20:44:05.574000Z"
+}
+```
+---
+- **DELETE /departamento/id**
+
+Verbo responsavel por excluir o departamento do banco de dados
+
+Esquema da requisição:
+
+>http://127.0.0.1:8000/api/departamento/5
+
+Esquema da resposta:
+
+```json
+{
+	"message": "Departamento deletado com sucesso."
+}
+```
+---
+
+
