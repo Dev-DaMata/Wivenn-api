@@ -48,6 +48,47 @@ O banco de dados que está sendo utilizado neste projeto está sendo criado na p
 - 2023_08_01_212413_create_tarefas_table.php
 
 # Para executar o script que criara o banco 
-    
+
         php artisan migrate
+
+# :high_brightness: Tabela de Entidades
+<!--ts-->
+   * [Departamento](#departamento)
+   * [Funcionários](#funcionários)
+   * [Tarefas](#pedidos)
+<!--te-->
+
+## :bus: Rotas
+
+```
+url/ http://127.0.0.1:8000/api/
+```
     
+## Departamento 🏬
+
+- <spam style="color: lightgreen">__GET  /departamento__</spam>
+Confira os Departamentos registrados no banco de dados
+Esquema da requisição
+    ```
+    http://127.0.0.1:8000/api/departamento
+    ```
+Esquema da resposta
+````
+[
+	{
+		"id": 1,
+		"Name": "T.I",
+		"created_at": "2023-01-08T23:19:08.897000Z",
+		"updated_at": "2023-01-08T23:19:08.897000Z"
+	},
+	{
+		"id": 2,
+		"Name": "RH",
+		"created_at": "2023-02-08T20:12:34.250000Z",
+		"updated_at": "2023-02-08T20:12:34.250000Z"
+	}
+]
+````
+
+
+
