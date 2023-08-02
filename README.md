@@ -410,3 +410,33 @@ Esquema da resposta
 
 ---
 
+- **GET /tarefa/:id**
+
+Busca uma tarefa no banco de dados a partir do id
+
+Esquema da requisição:
+
+    >http://127.0.0.1:8000/api/tarefa/4
+
+Esquema da resposta:
+
+```json
+{
+	"id": 4,
+	"title": "contratar o dev",
+	"description": "dev passou no teste",
+	"assignee_id": "3",
+	"due_date": "1900-01-01 23:19:16.283",
+	"created_at": "2023-02-08T21:23:51.890000Z",
+	"updated_at": "2023-02-08T21:23:51.890000Z"
+}
+```
+
+Esquema da resposta caso você esteja procurando um ID que não existe:
+
+```json
+{
+    "message": "erro ao pesquisar a tarefa."
+}
+```
+---
