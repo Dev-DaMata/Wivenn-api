@@ -191,4 +191,39 @@ Esquema da resposta:
 ```
 ---
 
+## Funcionario 🧑‍🏭
+
+- <spam style="color: lightgreen">__GET  /funcionario__</spam>
+
+Confira os funcionarios registrados no banco de dados
+
+Esquema da requisição
+   
+    >http://127.0.0.1:8000/api/funcionario
+ 
+Esquema da resposta
+````
+[
+	{
+		"id": 5,
+		"firstName": "Guilherme",
+		"lastName": "da Mata",
+		"email": "gui@gmail.com",
+		"phone": "+55 (11) 98765-4321",
+		"department_id": "1",
+		"created_at": "2023-02-08T18:40:42.620000Z",
+		"updated_at": "2023-02-08T18:40:42.620000Z"
+	},
+	{
+		"id": 6,
+		"firstName": "pedro",
+		"lastName": "da Mata",
+		"email": "pedro@gmail.com",
+		"phone": "987654321",
+		"department_id": "1",
+		"created_at": "2023-02-08T18:49:44.690000Z",
+		"updated_at": "2023-02-08T18:49:44.690000Z"
+	}
+]
+````
 
