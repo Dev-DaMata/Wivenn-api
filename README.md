@@ -374,3 +374,39 @@ Esquema da resposta:
 ```
 ---
 
+## Tarefa 📜
+
+- <spam style="color: lightgreen">__GET  /tarefa__</spam>
+
+Confira as tarefas registradas no banco de dados
+
+Esquema da requisição
+   
+    >http://127.0.0.1:8000/api/tarefa
+ 
+Esquema da resposta
+````
+[
+	{
+		"id": 3,
+		"title": "limpar pc",
+		"description": "o computador do chefe ta sujo",
+		"assignee_id": "2",
+		"due_date": "1900-01-01 23:19:16.283",
+		"created_at": "2023-02-08T21:23:27.767000Z",
+		"updated_at": "2023-02-08T21:23:27.767000Z"
+	},
+	{
+		"id": 4,
+		"title": "contratar o dev",
+		"description": "dev passou no teste",
+		"assignee_id": "3",
+		"due_date": "1900-01-01 23:19:16.283",
+		"created_at": "2023-02-08T21:23:51.890000Z",
+		"updated_at": "2023-02-08T21:23:51.890000Z"
+	}
+]
+````
+
+---
+
