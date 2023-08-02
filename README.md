@@ -357,4 +357,20 @@ Esquema da resposta erro na validação do email:
 
 ---
 
+- **DELETE /funcionario/id**
+
+Verbo responsavel por excluir o funcionario do banco de dados
+
+Esquema da requisição:
+
+>http://127.0.0.1:8000/api/funcionario/7
+
+Esquema da resposta:
+
+```json
+{
+	"message": "Funcionario deletado com sucesso."
+}
+```
+---
 
