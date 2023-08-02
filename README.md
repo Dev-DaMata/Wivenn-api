@@ -173,6 +173,22 @@ Esquema da resposta:
 	"updated_at": "2023-08-02T20:44:05.574000Z"
 }
 ```
+---
+- **DELETE /departamento/id**
 
+Verbo responsavel por excluir o departamento do banco de dados
+
+Esquema da requisição:
+
+>http://127.0.0.1:8000/api/departamento/5
+
+Esquema da resposta:
+
+```json
+{
+	"message": "Departamento deletado com sucesso."
+}
+```
+---
 
 
