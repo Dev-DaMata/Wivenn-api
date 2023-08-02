@@ -258,4 +258,103 @@ Esquema da resposta caso você esteja procurando um ID que não existe:
 	"message": "Erro ao pesquisar o funcionario."
 }
 ```
+---
+- **POST**
+
+Insira um funcionario no banco
+
+Esquema da requisição:
+
+    >http://127.0.0.1:8000/api/funcionario
+    
+⚠️ esse metodo possui uma validação de email e telefone!
+
+No json:
+```json
+{
+		"firstName": "Guilherme",
+		"lastName": "da Mata",
+		"email": "gui@gmail.com",
+		"phone": "999589965",
+		"department_id": "1",
+}
+```
+
+Esquema da resposta:
+
+```json
+{
+	"message": "Funcionario cadastrado com sucesso."
+}
+```
+Esquema da resposta erro na validação do telefone:
+
+```json
+{
+	"message": "Formato de número de telefone inválido."
+}
+```
+Esquema da resposta erro na validação do email:
+
+```json
+{
+	"message": "Formato de email inválido."
+}
+````
+
+---
+
+- **PUT /funcionario/id**
+
+Verbo responsavel pela atualização do funcionario
+
+Esquema da requisição:
+
+>http://127.0.0.1:8000/api/funcionario/7
+
+⚠️ esse metodo possui uma validação de email e telefone!
+
+No json:
+
+```json
+{
+		"firstName": "Guilherme",
+		"lastName": "da Mata",
+		"email": "gcordeiro773@gmail.com",
+		"phone": "999589965",
+		"department_id": "1",
+}
+```
+Esquema da resposta:
+
+```json
+{
+	"id": 7,
+	"firstName": "Guilherme",
+	"lastName": "da Mata",
+	"email": "gcordeiro773@gmail.com",
+	"phone": "999589965",
+	"department_id": "1",
+	"created_at": "2023-02-08T21:07:46.800000Z",
+	"updated_at": "2023-08-02T21:13:27.872000Z"
+}
+```
+
+Esquema da resposta erro na validação do telefone:
+
+```json
+{
+	"message": "Formato de número de telefone inválido."
+}
+```
+Esquema da resposta erro na validação do email:
+
+```json
+{
+	"message": "Formato de email inválido."
+}
+````
+
+---
+
 
