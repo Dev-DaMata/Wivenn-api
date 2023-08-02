@@ -439,4 +439,40 @@ Esquema da resposta caso você esteja procurando um ID que não existe:
     "message": "erro ao pesquisar a tarefa."
 }
 ```
+
 ---
+
+- **POST**
+
+Insira uma tarefa no banco
+
+Esquema da requisição:
+
+    >http://127.0.0.1:8000/api/tarefa
+
+No json:
+```json
+{
+	"title": "contratar o dev",
+	"description": "dev passou no teste",
+	"assignee_id": "3",
+	"due_date": "23: 19: 16.283",
+}
+```
+
+Esquema da resposta:
+
+```json
+{
+	"title": "contratar o dev",
+	"description": "dev passou no teste",
+	"assignee_id": "3",
+	"due_date": "23: 19: 16.283",
+	"updated_at": "2023-08-02T21:23:51.890000Z",
+	"created_at": "2023-08-02T21:23:51.890000Z",
+	"id": 4
+}
+```
+
+---
+
