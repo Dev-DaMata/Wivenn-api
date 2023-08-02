@@ -34,8 +34,20 @@ Projeto desenvolvido em [PHP](https://www.php.net/) com framework [Laravel](http
     ```
 4. Para iniciar o projeto:
 
+
+
     ```
     php artisan serve
     ```
 ⚠️ Para que o php rode na sua maquina é necessario um servidor local, neste caso estou utilizando o Xampp
+    
+##  :floppy_disk:Banco
+O banco de dados que está sendo utilizado neste projeto está sendo criado na pasta /database/migrations/ com os arquivos correspondentes.
+- 2023_08_01_212306_create_departamentos_table.php
+- 2023_08_01_212345_create_funcionarios_table.php
+- 2023_08_01_212413_create_tarefas_table.php
+
+# Para executar o script que criara o banco 
+    
+        php artisan migrate
     
