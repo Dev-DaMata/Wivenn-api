@@ -20,17 +20,28 @@ class FuncionarioController extends Controller
      */
     public function store(Request $request)
     {
-        return Funcionario::create($request->all());
-        if(Funcionario::create($request->all())){
+        $data = $request->all();
+        if (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
+            return response()->json([
+                'message' => 'Formato de email inválido.'
+            ], 400);
+        }
+        if (!preg_match('/^\d{9}$/', $data['phone'])) {
+            return response()->json([
+                'message' => 'Formato de número de telefone inválido.'
+            ], 400);
+        }
+        if (Funcionario::create($data)) {
             return response()->json([
                 'message' => 'Funcionario cadastrado com sucesso.'
             ], 201);
-        }else{
+        } else {
             return response()->json([
-                'message' => 'erro ao cadastrar o funcionario.'
+                'message' => 'Erro ao cadastrar o funcionario.'
             ], 404);
         }
     }
+
 
     /**
      * Display the specified resource.
