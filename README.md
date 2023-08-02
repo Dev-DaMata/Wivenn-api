@@ -13,3 +13,29 @@ Projeto desenvolvido em [PHP](https://www.php.net/) com framework [Laravel](http
 - <a href="https://code.visualstudio.com/download">VsCode</a> ou qualquer editor de texto de preferência.
 - <a href="https://insomnia.rest/download">Insomnia Rest</a> ou qualquer outra ferramenta de cliente API Rest.
 
+## :rocket: Como instalar a aplicação localmente
+
+1. Para clonar repositório:
+
+    ```
+    git clone https://github.com/Dev-DaMata/Wivenn-api.git
+    ```
+
+2. Entrando na pasta:
+
+     ```
+     cd ./wivenn-api
+     ```
+3. Para instalar as dependências necessárias/todas as dependências :
+
+    ```Composer
+    //instalar todas as dependências:
+    Composer i
+    ```
+4. Para iniciar o projeto:
+
+    ```
+    php artisan serve
+    ```
+⚠️ Para que o php rode na sua maquina é necessario um servidor local, neste caso estou utilizando o Xampp
+    
