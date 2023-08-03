@@ -58,6 +58,12 @@ O banco de dados que está sendo utilizado neste projeto está sendo criado na p
    * [Tarefas](#pedidos)
 <!--te-->
 
+# :high_brightness: Tabela de Validação jwt
+<!--ts-->
+   * [JWT](#JWT)
+
+<!--te-->
+
 ## :bus: Rotas
 
 ```
@@ -528,3 +534,51 @@ Esquema da resposta:
 
 ```
 ---
+
+
+## Validação token jwt 👮🏽‍♂🪪
+
+- <spam style="color: lightgreen">__POST /JWT__</spam>
+
+Esses metodos servem para validar o acesso do ususario
+Esquema da requisição
+   
+    >http://127.0.0.1:8000/api/login
+
+*No terminal do projeto escreva o seguinte comando 
+```
+    php artisan tinker
+    user::factory()->create
+```
+
+Esse comando criara um usuario com a senha padrão 'password'
+
+para gerar o token podemos utilizar o insomnia basta configurar o Headers
+    ```
+        Accept application/json
+        Content-Type application/json
+    ```
+
+Depois de configurar os headers, mande uma resposta json da seguinte maneira
+
+```
+{
+	"email": "email do usuario criado no passo acima",
+	"password": "password"
+}
+```
+
+Esquema da resposta:
+
+```json
+{
+	"data": {
+		"token": "token de valicação",
+		"token_type": "bearer",
+		"expires_in": 3600
+	}
+}
+```
+
+---
+
