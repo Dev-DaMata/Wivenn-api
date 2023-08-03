@@ -582,3 +582,31 @@ Esquema da resposta:
 
 ---
 
+- <spam style="color: lightgreen">__GET  /JWT__</spam>
+
+Verifique a token para realizar a validação
+
+Esquema da requisição
+   
+    >http://127.0.0.1:8000/api/user
+
+para validar o token podemos utilizar o insomnia basta configurar o Headers
+    ```
+        Accept application/json
+        Authorazation Bearer 'token que você ira pegar no get'
+    ```
+ 
+Esquema da resposta
+````
+{
+	"id": 1,
+	"name": "Nome do usuario",
+	"email": "Email do usuario",
+	"email_verified_at": "2023-02-08T14:44:51.903000Z",
+	"created_at": "2023-02-08T14:44:51.913000Z",
+	"updated_at": "2023-02-08T14:44:51.913000Z"
+}
+````
+
+---
+
