@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Departamento;
 use Illuminate\Http\Request;
+use Mockery\Undefined;
 
 class DepartamentoController extends Controller
 {
@@ -12,8 +13,19 @@ class DepartamentoController extends Controller
      */
     public function index()
     {
+        $query = departamento::query();
+        $param1 = null;
+        if (isset($_GET['Name'])) {
+            $param1 = $_GET['Name'];
+        }
+        if ($param1 != Null) {
+            $query->where('Name', $param1);
+            return $query->get();
+        }
         return departamento::all();
     }
+
+
 
     /**
      * Store a newly created resource in storage.
