@@ -12,6 +12,15 @@ class TarefaController extends Controller
      */
     public function index()
     {
+        $query = Tarefa::query();
+        $param1 = null;
+        if (isset($_GET['title'])) {
+            $param1 = $_GET['title'];
+        }
+        if ($param1 != Null) {
+            $query->where('title', $param1);
+            return $query->get();
+        }
         return Tarefa::all();
     }
 
