@@ -12,6 +12,16 @@ class FuncionarioController extends Controller
      */
     public function index()
     {
+
+        $query = Funcionario::query();
+        $param1 = null;
+        if (isset($_GET['firstName'])) {
+            $param1 = $_GET['firstName'];
+        }
+        if ($param1 != Null) {
+            $query->where('firstName', $param1);
+            return $query->get();
+        }
         return Funcionario::all();
     }
 
